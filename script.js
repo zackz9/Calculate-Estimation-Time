@@ -92,8 +92,8 @@ function calculateProjectTime() {
 
     ganttData.push({
       name,
-      startDate: taskStartDate.toDateString(),
-      endDate: skipWeekends(new Date(currentDate)).toDateString(),
+      startDate: taskStartDate,
+      endDate: skipWeekends(new Date(currentDate)),
       duration,
     });
   }
@@ -101,6 +101,7 @@ function calculateProjectTime() {
   displayResults(ganttData);
   generateCalendarChart(ganttData);
 }
+
 
 // Fonction pour ignorer les week-ends
 function skipWeekends(date) {
@@ -112,13 +113,33 @@ function skipWeekends(date) {
 
 // Afficher les résultats
 function displayResults(data) {
-  const resultHTML = data.map(task => `
-    <div>
-      <strong>${task.name}</strong> - Début : ${task.startDate}, Fin : ${task.endDate}.
-    </div>
-  `).join('');
+  const resultHTML = data
+    .map(
+      (task) => `
+      <div class="result-item">
+        <strong>${task.name}</strong>
+        <div class="date">
+          Début : ${new Date(task.startDate).toLocaleDateString('fr-FR', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          })}<br>
+          Fin : ${new Date(task.endDate).toLocaleDateString('fr-FR', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          })}
+        </div>
+      </div>
+    `
+    )
+    .join('');
+
   resultText.innerHTML = resultHTML;
 }
+
 
 // Générer le graphique
 function generateCalendarChart(data) {
