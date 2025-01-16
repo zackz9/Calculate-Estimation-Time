@@ -1,0 +1,130 @@
+:root {
+    --bg-color: #f5f5f5;
+    --text-color: #333;
+    --primary-color: #6C63FF;
+    --secondary-color: #FF6F61;
+    --neutral-color: #4CAF50;
+    --border-color: #ddd;
+    --card-bg: #ffffff;
+    --card-border: #e0e0e0;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  header {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  main {
+    display: flex;
+    flex: 1;
+  }
+  
+  .form-section {
+    width: 50%;
+    padding: 20px;
+    background: var(--card-bg);
+    border-right: 2px solid var(--border-color);
+  }
+  
+  .result-section {
+    width: 50%;
+    padding: 20px;
+    background: var(--bg-color);
+  }
+  
+  h1, h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  input, select, button {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #5a55d2;
+  }
+  
+  button.danger {
+    background-color: var(--secondary-color);
+  }
+  
+  .page-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 0.5fr;
+    gap: 10px;
+    margin-bottom: 15px;
+    align-items: center;
+  }
+  
+  .page-row input, .page-row select {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  .page-row input[type="number"] {
+    width: 100%;
+  }
+  
+  .page-row button {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .page-row button:hover {
+    background-color: #d9534f;
+  }
+  
+  .result-card {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .result-card ul {
+    padding-left: 20px;
+  }
+  
+  .result-card li {
+    margin-bottom: 10px;
+  }
+  
